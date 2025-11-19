@@ -25,6 +25,7 @@
     "@chromatic-com/storybook": "^4.1.2",
     "@eslint/compat": "^1.4.0",
     "@eslint/js": "^9.38.0",
+    "@fontsource/barlow-semi-condensed": "^5.2.7",
     "@inlang/paraglide-js": "^2.4.0",
     "@libsql/client": "^0.15.15",
     "@storybook/addon-a11y": "^10.0.7",

@@ -1,1 +1,39 @@
+@import '@fontsource/barlow-semi-condensed/latin.css';
 @import 'tailwindcss';
+
+@theme {
+	--font-sans: 'Barlow Semi Condensed', sans-serif;
+
+	/* disable all of the default colors */
+	--color-*: initial;
+
+	/* custom color palette */
+	--color-white: #ffffff;
+	--color-black: #000000;
+
+	--color-gray-200: #e1e4ed;
+	--color-gray-400: #b1b4c5;
+	--color-gray-500: #8a90ac;
+	--color-gray-600: #565468;
+
+	--color-light-blue-400: #3fb7cd;
+	--color-light-blue-500: #2d8dab;
+
+	--color-blue-500: #4664f4;
+	--color-blue-700: #2a45c2;
+
+	--color-gold-500: #eb9f0e;
+	--color-gold-600: #c76c1b;
+
+	--color-purple-600: #834ee3;
+	--color-purple-700: #5f37a8;
+
+	--color-red-600: #db2e4d;
+	--color-red-800: #9d1634;
+
+	--color-navy-900: #3b4262;
+}
+
+.bg-gradient-1 {
+	background: radial-gradient(134.34% 134.34% at 50% 0%, #1f3757 0%, #131537 100%);
+}
