@@ -1,8 +1,10 @@
 @import '@fontsource/barlow-semi-condensed/latin.css';
+@import '@fontsource-variable/noto-sans-thai';
+
 @import 'tailwindcss';
 
 @theme {
-	--font-sans: 'Barlow Semi Condensed', sans-serif;
+	--font-sans: 'Barlow Semi Condensed', 'Noto Sans Thai Variable', sans-serif;
 
 	/* disable all of the default colors */
 	--color-*: initial;

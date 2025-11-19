@@ -17,6 +17,9 @@ importers:
       '@eslint/js':
         specifier: ^9.38.0
         version: 9.39.1
+      '@fontsource-variable/noto-sans-thai':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@fontsource/barlow-semi-condensed':
         specifier: ^5.2.7
         version: 5.2.7
@@ -491,6 +494,9 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fontsource-variable/noto-sans-thai@5.2.8':
+    resolution: {integrity: sha512-btwMwVkcyGHc7UuC4+JJqiIrXxdswIA6RPzqiJ35dkD9ECfMM+1qECenQkaFPCiMWXfQvk0lV/N1BgBIq9ztdA==}
 
   '@fontsource/barlow-semi-condensed@5.2.7':
     resolution: {integrity: sha512-jkNDrHJe1+rUQkd71f9fdwPmJf7SF506AHfwMChlDrCPx5eLAE28tcmpGDB487yE1fQIEGfgfL4YnE4/KEniuA==}
@@ -2910,6 +2916,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.17.0
       levn: 0.4.1
+
+  '@fontsource-variable/noto-sans-thai@5.2.8': {}
 
   '@fontsource/barlow-semi-condensed@5.2.7': {}
 

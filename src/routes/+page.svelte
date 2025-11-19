@@ -3,16 +3,17 @@
 	import SymbolPlaceholder from '$lib/components/symbol-placeholder.svelte';
 	import Result from '$lib/components/result.svelte';
 	import Symbol, { type SymbolName } from '$lib/components/symbol.svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let score = $state(0);
 	let selectedSymbol = $state<SymbolName>();
-	let houseSymbol = $state<SymbolName>();
+	let opponentSymbol = $state<SymbolName>();
 	let result = $state<'win' | 'lose' | 'tie'>();
 	let timeLeft = $state(3);
 
 	function resetGame() {
 		selectedSymbol = undefined;
-		houseSymbol = undefined;
+		opponentSymbol = undefined;
 		result = undefined;
 		timeLeft = 3;
 	}
@@ -26,17 +27,17 @@
 
 				const symbols: SymbolName[] = ['paper', 'rock', 'scissors'];
 				const randomIndex = Math.floor(Math.random() * symbols.length);
-				houseSymbol = symbols[randomIndex];
+				opponentSymbol = symbols[randomIndex];
 
-				if (selectedSymbol === houseSymbol) {
+				if (selectedSymbol === opponentSymbol) {
 					result = 'tie';
 					return;
 				}
 
 				if (
-					(selectedSymbol === 'rock' && houseSymbol === 'scissors') ||
-					(selectedSymbol === 'paper' && houseSymbol === 'rock') ||
-					(selectedSymbol === 'scissors' && houseSymbol === 'paper')
+					(selectedSymbol === 'rock' && opponentSymbol === 'scissors') ||
+					(selectedSymbol === 'paper' && opponentSymbol === 'rock') ||
+					(selectedSymbol === 'scissors' && opponentSymbol === 'paper')
 				) {
 					score += 1;
 					result = 'win';
@@ -79,7 +80,7 @@
 				<Symbol name="rock" onclick={() => selectSymbol('rock')} />
 			</div>
 		</div>
-	{:else if selectedSymbol}
+	{:else}
 		<div
 			class="mt-25 grid w-full grid-cols-2 gap-x-10 sm:max-w-xl lg:flex lg:max-w-fit lg:justify-between lg:gap-x-20"
 		>
@@ -87,17 +88,17 @@
 				class="flex flex-col items-center gap-y-4 sm:flex-col-reverse sm:gap-y-16 sm:place-self-start"
 			>
 				<Symbol name={selectedSymbol} size="lg" />
-				<h3 class="font-bold text-white sm:text-2xl">YOU PICKED</h3>
+				<h3 class="font-bold tracking-[3px] text-white uppercase sm:text-2xl">{m.you_picked()}</h3>
 			</div>
 			<div
 				class="flex h-full flex-col items-center justify-between gap-y-4 sm:flex-col-reverse sm:gap-y-16 sm:place-self-end lg:order-last lg:place-self-stretch"
 			>
-				{#if !houseSymbol}
-					<SymbolPlaceholder size="lg" {timeLeft} />
+				{#if opponentSymbol}
+					<Symbol size="lg" name={opponentSymbol} />
 				{:else}
-					<Symbol size="lg" name={houseSymbol} />
+					<SymbolPlaceholder size="lg" {timeLeft} />
 				{/if}
-				<h3 class="font-bold text-white sm:text-2xl">THE HOUSE PICKED</h3>
+				<h3 class="font-bold text-white uppercase sm:text-2xl">{m.opponent_picked()}</h3>
 			</div>
 
 			{#if result}

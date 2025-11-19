@@ -1,4 +1,10 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from th!"
+	"score": "คะแนน",
+	"you_picked": "คุณเลือก",
+	"opponent_picked": "คู่ต่อสู้เลือก",
+	"you_win": "คุณชนะ",
+	"you_lose": "คุณแพ้",
+	"tie": "เสมอ",
+	"play_again": "เล่นอีกครั้ง"
 }
